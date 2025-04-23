@@ -1,7 +1,6 @@
 import { connection } from "websocket";
 import { OutgoingMessages } from "./messages/outgoingMessages";
 
-
 interface User{
         name:string;
         id:string;
