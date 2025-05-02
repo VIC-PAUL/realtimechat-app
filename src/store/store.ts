@@ -12,6 +12,6 @@ export abstract class Store {
   constructor() {}
   initRoom(roomId: string) {}
   getChats(room: string, limit: number, offset: number) {}
-  addChat(userId:UserId, name:string, room: string, message:string) {}
-  upvote(userId:UserId, room: string, chatId: string) {}
+  addChat(userId: UserId, name: string, room: string, message: string) {}
+  upvote(userId: UserId, room: string, chatId: string) {}
 }

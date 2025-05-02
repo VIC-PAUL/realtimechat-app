@@ -1,5 +1,5 @@
 import { connection, server as WebSocketServer } from "websocket";
-import http, { IncomingMessage } from "http";
+import http from "http";
 import { UserManager } from "./userManager";
 import {
   IncomingMessages,
