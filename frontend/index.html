@@ -1,0 +1,56 @@
+<head> </head>
+<body>
+  <script>
+    const ws = new WebSocket("ws://localhost:8081", "echo-protocol");
+    const userId = Math.floor(Math.random()*1000);
+    ws.onopen = () => {
+      ws.send(JSON.stringify({
+        type:'JOIN_ROOM',
+        payload:{
+        name: "vic",
+        userId,
+        roomId:"2",
+        }
+      }));
+    }, 
+    ws.onerror = (err) => {
+  console.error("WebSocket error", err);
+};
+
+ws.onclose = (e) => {
+  console.warn("WebSocket closed", e);
+},
+    ws.onmessage=function(event){
+      alert('dsfsdfsdfsd')
+      console.error("onmessage triggered", event);
+        try{
+            // const {payload,type} = JSON.parse(event.data);
+            // if(type==="ADD_CHAT"){
+            //   const textNode = document.createElement("p");
+            //   textNode.innerHTML=payload.message + `(${payload.upvotes})`;
+            //   document.getElementById("messages").appendChild(textNode)
+            // }
+        }
+        catch(e){
+            console.error(e);
+        }
+    };
+    function sendChat (){
+        ws.send(JSON.stringify({
+        type:'SEND_MESSAGE',
+        payload:{
+        message: document.getElementById('inpText').value,
+        // message:'gergerg',
+        userId: userId,
+        roomId:"2",
+        }
+      }))
+    }
+  </script>
+  Hello bitches
+  <br/>
+  <input type="text" id="inpText"></input>
+  <!-- <div id="messages"></div> -->
+  <br/>
+  <button onclick="sendChat()">Send Chat</button>
+</body>

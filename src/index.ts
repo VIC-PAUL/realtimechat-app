@@ -90,6 +90,7 @@ function messageHandler(ws: connection, message: IncomingMessages) {
       payload.roomId,
       payload.message
     );
+    
     if (!chat) {
       return;
     }
@@ -101,9 +102,10 @@ function messageHandler(ws: connection, message: IncomingMessages) {
         message: payload.message,
         name: user.name,
         upvotes: 0,
-      },
+      },      
     };
 
+    
     userManager.broadcast(payload.roomId, payload.userId, outgoingPayload);
   }
 
