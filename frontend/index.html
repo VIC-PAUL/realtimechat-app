@@ -21,15 +21,14 @@ ws.onclose = (e) => {
   console.warn("WebSocket closed", e);
 },
     ws.onmessage=function(event){
-      alert('dsfsdfsdfsd')
-      console.error("onmessage triggered", event);
+      // console.error("onmssage triggered", event);
         try{
-            // const {payload,type} = JSON.parse(event.data);
-            // if(type==="ADD_CHAT"){
-            //   const textNode = document.createElement("p");
-            //   textNode.innerHTML=payload.message + `(${payload.upvotes})`;
-            //   document.getElementById("messages").appendChild(textNode)
-            // }
+            const {payload,type} = JSON.parse(event.data);
+            if(type==="ADD_CHAT"){
+              const textNode = document.createElement("p");
+              textNode.innerHTML=payload.message + `(${payload.upvotes})`;
+              document.getElementById("messages").appendChild(textNode)
+            }
         }
         catch(e){
             console.error(e);
