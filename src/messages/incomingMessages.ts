@@ -5,7 +5,6 @@ export enum SupportedMessage{
     UpvoteMessage = "UPVOTE_MESSAGE",    
 }
 
-
 export type IncomingMessages={
     type:SupportedMessage.JoinRoom,
     payload:InitMessageType
