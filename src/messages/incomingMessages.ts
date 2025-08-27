@@ -35,7 +35,6 @@ export const UserMessage = z.object({
     message:z.string(),
 }
 )
-
 export type UserMessageType = z.infer<typeof UserMessage>;
 
 export const UpvoteMessage = z.object({
