@@ -4,7 +4,6 @@ export enum SupportedMessage{
     SendMesssage = "SEND_MESSAGE",
     UpvoteMessage = "UPVOTE_MESSAGE",    
 }
-
 export type IncomingMessages={
     type:SupportedMessage.JoinRoom,
     payload:InitMessageType
@@ -26,7 +25,6 @@ export const InitMessage = z.object({
 )
 
 export type InitMessageType = z.infer<typeof InitMessage>;
-
 
 export const UserMessage = z.object({
     userId: z.string(),
