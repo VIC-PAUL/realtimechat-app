@@ -34,6 +34,7 @@ ws.onclose = (e) => {
             console.error(e);
         }
     };
+    
     function sendChat (){
         ws.send(JSON.stringify({
         type:'SEND_MESSAGE',
