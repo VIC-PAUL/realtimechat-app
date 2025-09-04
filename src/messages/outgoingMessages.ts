@@ -3,7 +3,6 @@ export enum SupportedMessage{
     UpdateChat  = "UPDATE_CHAT",
 }
 
-
  type MessagePayload={
         roomId:string;
         message:string;
